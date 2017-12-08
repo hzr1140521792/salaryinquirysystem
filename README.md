@@ -38,8 +38,6 @@
 5.执行在根目录下执行`python index.py`命令
 6.在浏览器中输入本机`ip 127.0.0.1`
 
-https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/1.png
+![alt text](https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/3.png)
 
-https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/2.png
-
-https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/3.png
+![alt text](https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/2.png)![alt text](https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/1.png)

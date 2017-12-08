@@ -1,0 +1,2 @@
+# salaryinquirysystem
+用flask做的一个小型的工资查询系统

@@ -1,5 +1,5 @@
 ---
-typora-root-url: pic
+
 ---
 
 # salaryinquirysystem
@@ -38,6 +38,8 @@ typora-root-url: pic
 5.执行在根目录下执行`python index.py`命令
 6.在浏览器中输入本机`ip 127.0.0.1`
 
-https://github.com/hzr1140521792/salaryinquirysystem/blob/master/pic/QQ%E5%9B%BE%E7%89%8720171208182410.png
-https://github.com/hzr1140521792/salaryinquirysystem/blob/master/pic/QQ%E5%9B%BE%E7%89%8720171208182516.png
-https://github.com/hzr1140521792/salaryinquirysystem/blob/master/pic/QQ%E5%9B%BE%E7%89%8720171208182600.png
+https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/1.png
+
+https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/2.png
+
+https://raw.githubusercontent.com/hzr1140521792/salaryinquirysystem/master/pic/3.png

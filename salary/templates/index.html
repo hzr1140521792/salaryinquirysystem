@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>工程中心薪资查询网站</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+ <script type="text/javascript">
+
+
+    //获取下拉条选中的值
+     function getSelectValue(){
+        var options=$("#monthSelect option:selected");
+        return options.val();
+     }
+
+
+    //调用接口
+     function openUrl()
+     {
+        school_no=document.getElementById("school_no").value;
+        monthvalue=getSelectValue();
+        if (school_no&monthvalue) {
+            window.location.href="/"+school_no+"/"+monthvalue;
+        }else
+        {
+            alert("请选择月份并输入学号")
+        }
+     }
+     
+     //调用接口
+    // function openUrl()
+    // {
+    // school_no=document.getElementById("school_no").value;
+    // monthvalue=getSelectValue();
+
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/"+school_no+"/"+monthvalue,
+    //     // data: JSON.stringify(post_data, null, '\t'),
+    //     contentType: 'application/json;charset=UTF-8',
+    //     success: function(result) {
+    //         // 传完数据之后做某些处理
+    //         ...
+    //     }
+    // });
+
+    // }
+
+
+
+</script>
+<link rel="icon" href="data:;base64,=">
+<body>
+	<h1 class="page-header" style="text-align: center">研究生薪资查询系统</h1>
+	<br>
+	<div style="text-align: center;font-size: 20px">
+	请选择月份：
+<div class="btn-group">
+     <select class="form-control" id="monthSelect" onchange="getSelectValue()">
+        <option value="0">请选择月份</option>
+        {% for m in month%}
+            <option value="{{m[0]}}">{{m[0]}}月份</option>
+        {% endfor %}
+        </select>
+</div>
+
+
+
+
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入学号：
+	<input type="text" name="school_no" placeholder="请输入学号" id="school_no">
+	<button type="button" class="btn btn-success" onclick="openUrl()">提交</button>
+	<br>
+	<br>
+
+
+	</div>
+<table class='table table-bordered'>
+  <tr>
+    <th>序号</th>
+    <th>姓名</th>
+    <th>学号</th>
+    <th>月份</th>
+    <th>到勤率</th>
+    <th>考勤津贴</th>
+    <th>岗位</th>
+    <th>岗位津贴</th>
+    <th>完成表现等级</th>
+    <th>任务津贴</th>
+    <th>出差补助</th>
+    <th>加班补助</th>
+    <th>津贴总和</th>
+    <th>折算后工资</th>
+    <th>实发工资</th>
+  </tr>
+   
+    {%for r in result%}
+  <tr>
+    <td>{{r[0]}}</td>
+    <td>{{r[1]}}</td>
+    <td>{{r[2]}}</td>
+    <td>{{r[14]}}</td>
+     <td>{{r[3]}}</td>
+    <td>{{r[4]}}</td>
+    <td>{{r[5]}}</td>
+    <td>{{r[6]}}</td>
+     <td>{{r[7]}}</td>
+    <td>{{r[8]}}</td>
+    <td>{{r[9]}}</td>
+    <td>{{r[110]}}</td>
+   <td>{{r[11]}}</td>
+    <td>{{r[12]}}</td>
+    <td>{{r[13]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+<div style="font-size: 20px">
+说明:<br>
+1、考勤的全额补贴为200元，学生能够除了上课时间之外的工作日在实验室完成项目任务，即全额发放；<br>
+2、因为特殊原因加班（临时项目演示、周末完成其他老师交代的额外任务等），增发加班补助，工作日的项目演示不是加班；<br>
+3、岗位目前分为：实习程序员、程序员、开发负责人、项目经理、产品经理；<br>
+4、任务完成情况目前没有办法量化，后面几个页签为本月完成任务单，可以查看详情；<br>
+</div>
+
+</body>
+</html>
